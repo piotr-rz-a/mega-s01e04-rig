@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-10-29
 ---
 
 # Morning digest
@@ -77,3 +78,28 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Source | Blocked by | Worker | Closed |
+|---|-------|--------|------------|--------|--------|
+| 1 | [Run log reader and shared digest types](https://github.com/piotr-rz-a/mega-s01e04-rig/issues/1) | §1 | — | Codex · gpt-6.1-sol (configured) · medium | 2026-10-29 |
+| 2 | [Digest page: GET /digest/:night](https://github.com/piotr-rz-a/mega-s01e04-rig/issues/2) | §2a | #1 types | Codex · claude-haiku-5-5 · high | 2026-10-29 |
+| 3 | [Digest JSON: GET /api/digest/:night](https://github.com/piotr-rz-a/mega-s01e04-rig/issues/3) | §2b | #1 types | Codex · claude-haiku-5-5 · high | 2026-10-29 |
+| 4 | [Status board: night links and result counts](https://github.com/piotr-rz-a/mega-s01e04-rig/issues/4) | §2c | #1 types | Codex · claude-haiku-5-5 · high | 2026-10-29 |
+| 5 | [Digest route tests](https://github.com/piotr-rz-a/mega-s01e04-rig/issues/5) | §2d | #1 types; #2, #3 for final checks | Codex · claude-haiku-5-5 · high | 2026-10-29 |
+| 6 | [Export and submit the morning digest review preview](https://github.com/piotr-rz-a/mega-s01e04-rig/issues/6) | §3 | #1–#5 | Codex · gpt-6.1-sol (configured) · medium | 2026-10-29 |
+| 7 | [Remove the preview marker and archive the completed plan](https://github.com/piotr-rz-a/mega-s01e04-rig/issues/7) | §4 | #6; review received; human cleanup approval | Codex · gpt-6.1-sol (configured) · medium | 2026-10-29 |
+
+## Review and cleanup
+
+The reviewer explicitly confirmed seeing the preview before final closure and cleanup.
+The preview issue was reopened after a premature closure; the review remained pending
+until that confirmation. With separate human approval, the page was regenerated with
+`LANE_MARKER` unset and replaced at the same public URL. The banner now reads
+"no marker set"; the digest is unchanged.
+
+Preview: https://35.195.109.227.sslip.io/mega-s01e04.html
+
+Verification: 29 tests pass, typecheck passes, both fixture-night links render, and the
+public HTTPS page matches the marker-free export. `runs/` was not modified.
